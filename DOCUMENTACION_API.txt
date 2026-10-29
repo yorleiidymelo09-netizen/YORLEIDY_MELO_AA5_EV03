@@ -1,0 +1,73 @@
+DOCUMENTACIÓN DE SERVICIOS WEB
+Evidencia: GA7-220501096-AA5-EV03
+Aprendiz: Yorleidy Melo
+
+PROYECTO: API de registro e inicio de sesión
+
+OBJETIVO:
+Desarrollar servicios web que permitan registrar
+usuarios e iniciar sesión mediante una API.
+
+SERVICIO 1: REGISTRO DE USUARIOS
+Ruta: /registro
+Método: POST
+
+Descripción:
+Permite registrar un usuario mediante los datos
+enviados a la API.
+
+SERVICIO 2: INICIO DE SESIÓN
+Ruta: /login
+Método: POST
+
+Descripción:
+Permite comprobar los datos de acceso de un usuario.
+
+CONTROL DE VERSIONES:
+El proyecto se gestionará utilizando Git y GitHub.
+DATOS DE ENTRADA DE LOS SERVICIOS
+
+Los servicios reciben datos en formato JSON.
+
+Ejemplo:
+{
+  "usuario": "yorleidy",
+  "contrasena": "Clave123"
+}
+
+SERVICIO 1: REGISTRO DE USUARIOS
+Ruta: /registro
+Método: POST
+Dirección: http://localhost:3000/registro
+
+Respuesta exitosa:
+Código HTTP: 201
+Mensaje: Usuario registrado satisfactoriamente
+
+Validaciones:
+- Usuario y contraseña son obligatorios.
+- Los datos deben estar en formato JSON.
+- No permite registrar dos veces el mismo usuario.
+- La contraseña se almacena protegida mediante un hash.
+
+SERVICIO 2: INICIO DE SESIÓN
+Ruta: /login
+Método: POST
+Dirección: http://localhost:3000/login
+
+Respuesta exitosa:
+Código HTTP: 200
+Mensaje: Autenticación satisfactoria
+
+Validaciones:
+- Usuario y contraseña son obligatorios.
+- Los datos deben estar en formato JSON.
+- Comprueba que el usuario esté registrado.
+- Verifica que la contraseña sea correcta.
+- Si las credenciales son incorrectas, responde con el código HTTP 401.
+
+HERRAMIENTAS UTILIZADAS
+- Visual Studio Code para trabajar con el código.
+- Node.js para ejecutar los servicios web.
+- Postman para realizar las pruebas.
+- Git y GitHub para el control de versiones.
